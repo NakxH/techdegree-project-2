@@ -57,6 +57,12 @@ function handleSearch(e){
 
 // This function is filtering through the array of data and running addPagination and showPage to update the UI.
 function studentSearch(search) {
+   if (!search) {
+      addPagination(data);
+      showPage(data, 1);
+      return;
+   }
+
    let items = data.filter((item) => {
       const searchLower = search.toLowerCase();
       const name = `${item.name.first.toLowerCase()} ${item.name.last.toLowerCase()}`
