@@ -3,14 +3,13 @@ Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
 */
 
-
-
 /*
 For assistance:
    Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
 
+// This variable is declaring the page size so it can be changed with ease in the future.
 const pageSize = 9;
 
 /*
@@ -44,16 +43,19 @@ function createSearch() {
    searchBtnImg.alt = 'Search Icon'
    searchButton.appendChild(searchBtnImg);
 
+   // These event listeners are being passed the function handleSearch() so there is less repeated code.
    headerSection.addEventListener('keyup', handleSearch)
    headerSection.addEventListener('click', handleSearch)
 }
 
+// This function allows you to search with both the 'click' event and 'keyup' event.
 function handleSearch(e){
    e.preventDefault();
    const input = document.querySelector('#search');
    studentSearch(input.value);
 }
 
+// This function is filtering through the array of data and running addPagination and showPage to update the UI.
 function studentSearch(search) {
    let items = data.filter((item) => {
       const searchLower = search.toLowerCase();
@@ -165,6 +167,7 @@ function addPagination(list) {
    })
 }
 
+// This function is called when no search items are present.
 function showSearchError () {
    const studentList = document.querySelector('.student-list');
    const errorText = document.createElement('h2');
