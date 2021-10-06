@@ -6,4 +6,4 @@ This displays a list of paginated students that you can filter through using a s
 
 ## How to run this project
 - Clone the repository
-- Open the index.html file in Goodle Chrome
+- Open the index.html file in Google Chrome
